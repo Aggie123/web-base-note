@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>布局</title>
+	<style type="text/css">
+	*{margin:0;padding:0;
+	box-sizing:border-box; -moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box; /* Safari */ }
+	.bg-red{background-color: red;}
+	.bg-green{background-color: green;}
+	.bg-blue{background-color: blue;}
+
+	.container{
+		height:100px;
+		position: relative;
+		margin:10px;
+	}
+	.two-left1{float:left;width:100px;background-color:#f00;}
+	.two-right1{margin-left:100px;background-color:#0f0;}
+
+	.two-left2{width:100px;float:left;}
+	.two-right2{position:absolute;left:100px;right:0;top:0;}
+
+	.container3{display: flex;flex-direction:row;}
+	.two-left3{width:200px;}
+	.two-right3{flex:1;}
+
+	/*3*/
+	.left, .right, .middle{height:100%;}
+	.left{float:left;width:300px;background-color: #f00;}
+	.middle{position:absolute;background-color: #0f0;left:300px;right: 100px;}
+	.right{float:right;width:100px;background-color: #00f;}
+
+	.container2{display:flex;flex-direction:row;}
+	.left2{width:300px;}
+	.middle2{flex:1;}
+	.right2{width:100px;}
+
+	</style>
+</head>
+<body>
+<pre>两列布局：左侧定宽，右侧自适应
+//方法一：利用float和负外边距
+方法二：利用外边距
+方法三：利用position
+方法四：利用flex布局
+
+三列布局：左右定款，中间自适应。
+//方法一：使用负外边距
+方法二：使用绝对定位
+方法三：使用flex布局</pre>
+<h2>2 列布局：</h2>
+<div class="container">
+	<div class="two-left1">left:use float and margin</div>
+	<div class="two-right1">right</div>
+</div>
+<div class="container">
+	<div class="two-left2 bg-red">left:use position</div>
+	<div class="two-right2 bg-green">right</div>
+</div>
+<div class="container container3">
+	<div class="two-left3 bg-red">left:利用flex</div>
+	<div class="two-right3 bg-green">right</div>
+</div>
+
+
+<h2>3 列布局：</h2>
+<p>1. 3列布局：左右宽度固定，中间flex</p>
+<div class="container">
+	<div class="left">left 11111111111111111111111111111111</div>
+	<div class="middle">middle 222222222222222222222222222222222</div>
+	<div class="right">right 33333333333333333333333333333333333</div>
+</div>
+<div class="container container2">
+	<div class="left2 bg-red">left 11111111111111111111111111111111</div>
+	<div class="middle2 bg-green">middle 222222222222222222222222222222222</div>
+	<div class="right2 bg-blue">right 33333333333333333333333333333333333</div>
+</div>
+
+<p>3.子元素浮动，大小不固定的父元素塌陷问题</p>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+	<title>居中</title>
+	<style type="text/css">
+	*{box-sizing:border-box;}
+
+	/*1. 文本居中*/
+	/*1.1 单行文本的水平垂直居中*/
+	.one-line-text-center{
+		height:60px;
+		line-height:60px; /*container's height*/
+		text-align:center;
+		overflow: hidden;
+		background-color: #f00;
+		margin:10px;
+	}
+	/*1.2 多行文本水平垂直居中*/
+	.muti-text-outer {
+  		display:table; 
+  		overflow:hidden; 
+  		background-color: #f00;
+		margin:10px;
+  		height: 90px;
+	}
+	.muti-text-inner {display:table-cell; vertical-align:middle; text-align: center;} 
+
+
+	/*2. img居中*/
+
+	/*3. 块垂直居中*/
+	.box{
+		position:relative;
+		margin:10px;
+		border:1px solid #ccc;
+		height:200px;
+	}
+	.content{
+		height:100px;
+		width:500px;
+		background-color: #0f0;
+	}
+	/*1. 固定大小的块垂直水平居中*/
+	.center-fix{
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin-left:-250px;
+		margin-top:-50px;
+	}
+	/*2. 大小不定的块垂直水平居中*/
+	.center-flex{
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:auto;
+	}
+	</style>
+</head>
+<body>
+<!-- 1.文本居中 -->
+<div class="one-line-text-center">单行文本居中just only one line</div>
+
+<div class="muti-text-outer">
+	<div class="muti-text-inner">多行文本居中：more than one line more than one line more than one line more than one line more than one linemore than one linemore than one linemore than one line12345
+	</div>
+</div>
+<!-- 2. img居中 -->
+
+<!-- 3.块居中 -->
+<div class="box">
+	<div class="content center-fix">固定大小块居中</div>
+</div>
+<div class="box">
+	<div class="content center-flex">弹性大小块居中</div>
+</div>
+</body>
+</html>
