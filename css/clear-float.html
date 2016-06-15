@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>清除浮动</title>
+	<style type="text/css">
+	.clear{clear:both;}
+	.fl{float:left;}
+	.fr{float:right;}
+
+	.outer{background-color: #f00;margin: 10px;}
+	.outer.overflow{overflow: hidden;} /*or auto*/
+	
+	/*must be after, before won't work*/
+	.clearfix{zoom:1;} /*hack ie7*/
+	.clearfix::after{clear:both;content:'';display:block;}
+	
+	.inner{width:200px;background-color: #0f0;height:200px;}
+	</style>
+</head>
+<body>
+<!-- 3 ways to clear float -->
+<!-- 1. parent to overflow hidden -->
+<div class="outer overflow">
+	<div class="inner fl">inner</div>
+	<div class="inner fr">inner</div>
+</div>
+<!-- 2. sibling to clear both -->
+<div class="outer">
+	<div class="inner fl">inner</div>
+	<div class="inner fr">inner</div>
+	<div class='clear'></div>
+</div>
+<!-- 3. parent::after to clear both -->
+<div class="outer clearfix">
+	<div class="inner fl">inner</div>
+	<div class="inner fr">inner</div>
+</div>
+</body>
+</html>

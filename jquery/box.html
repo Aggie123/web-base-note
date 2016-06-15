@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>盒子模型</title>
+	<script type="text/javascript" src='../node_modules/jquery/dist/jquery.min.js'></script>
+	<script type="text/javascript">
+  $(document).ready(function(){
+  $("p").click(function(){
+  $(this).hide();
+  });
+
+  $('#test').text('some text');
+
+  console.log($('#box').height());
+  console.log($('#box').innerHeight());
+  console.log($('#box').outerHeight());
+  console.log($('#box').outerHeight(true));
+
+  console.log($('#box1').height());
+  console.log($('#box1').innerHeight());
+  console.log($('#box1').outerHeight());
+  console.log($('#box1').outerHeight(true));
+
+//document.write('haha');
+});
+	</script>
+	<style type="text/css">
+	.box{width:200px;height:200px;padding:50px;margin:50px;border:10px solid #ccc;}
+	.box1{box-sizing:border-box;}
+	</style>
+</head>
+<body>
+<p>test:</p>
+<div id="test"></div>
+<div class="box" id='box'>box</div>
+<div class="box box1" id='box1'>box</div>
+</body>
+</html>
