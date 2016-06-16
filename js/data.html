@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> 数据操作</title>
+	<script type="text/javascript">
+		var array=['a',2,'rr',4];
+		array.map(function(index,value){
+			console.log(`index:${index},value:${value}`);
+		})
+
+		/*Set:
+		1.don't have key, just value
+		2. no duplicated values
+		3.method:add(),values(),
+		*/
+		var set=new Set();
+		set.add('hh').add('ee');
+		console.log(set.size);
+		console.log(set.values());
+		console.log(set.entries());
+		console.log([...set]);
+		for(let key of set.values()){
+			console.log(`set-key:${key}`);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
